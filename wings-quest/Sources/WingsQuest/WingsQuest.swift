@@ -1,15 +1,31 @@
 func bonusPoints(powerUpActive: Bool, touchingEagle: Bool) -> Bool {
-  fatalError("Please implement the bonusPoints(powerUpActive:touchingEagle:) function")
+  if powerUpActive && touchingEagle {
+    return true
+  }
+
+  return false
 }
 
 func score(touchingPowerUp: Bool, touchingSeed: Bool) -> Bool {
-  fatalError("Please implement the score(touchingPowerUp:touchingSeed:) function")
+  if touchingPowerUp || touchingSeed {
+    return true
+  }
+
+  return false
 }
 
 func lose(powerUpActive: Bool, touchingEagle: Bool) -> Bool {
-  fatalError("Please implement the lose(powerUpActive:touchingEagle:) function")
+  if touchingEagle && !powerUpActive {
+    return true
+  }
+
+  return false
 }
 
 func win(hasPickedUpAllSeeds: Bool, powerUpActive: Bool, touchingEagle: Bool) -> Bool {
-  fatalError("Please implement the win(hasPickedUpAllSeeds:powerUpActive:touchingEagle:) function")
+  if lose(powerUpActive: powerUpActive, touchingEagle: touchingEagle) {
+    return false
+  }
+
+  return true
 }
